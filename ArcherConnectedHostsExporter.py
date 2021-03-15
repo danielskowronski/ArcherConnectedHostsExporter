@@ -30,7 +30,7 @@ with open(args.aliases_file, newline='') as aliases_file_handle:
 discovered=[]
 for arp_entry_raw in arp_entries_raw:
   arp_entry=arp_entry_raw.split()
-  if arp_entry[0]=="IP":
+  if arp_entry[0]=="IP" or arp_entry[3]=="00:00:00:00:00:00":
     continue
   discovered.append(arp_entry[3])
 
